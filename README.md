@@ -19,6 +19,7 @@ A classic Snake game implementation with user authentication, persistent scores,
 2.  Open the `index.html` file in your web browser.
 
 No build process or server is required; the game runs entirely in the browser using HTML, CSS, and JavaScript.
+You can also test it with this link: https://amirjahani1380.github.io/Snake/
 
 ## How to Play
 
