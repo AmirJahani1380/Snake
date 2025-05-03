@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Snake Game</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+<body>
+    <div class="container">
+        <div id="game-container">
+            <h1>Snake Game</h1>
+            <div id="game-info">
+                <span id="username-display"></span>
+                <span id="score-display">Score: 0</span>
+            </div>
+
+            <div class="game-settings">
+                <div class="settings-group">
+                    <label>Game Mode:</label>
+                    <div class="radio-group">
+                        <label>
+                            <input type="radio" name="game-mode" value="classic" checked>
+                            Classic (Hit wall = Game Over)
+                        </label>
+                        <label>
+                            <input type="radio" name="game-mode" value="portal">
+                            Portal (Pass through walls)
+                        </label>
+                    </div>
+                </div>
+
+                <div class="settings-group">
+                    <label>Board Size:</label>
+                    <select id="board-size">
+                        <option value="300">Small (15×15)</option>
+                        <option value="400" selected>Medium (20×20)</option>
+                        <option value="500">Large (25×25)</option>
+                        <option value="600">Extra Large (30×30)</option>
+                    </select>
+                </div>
+
+                <div class="settings-group">
+                    <label>Color Theme:</label>
+                    <div class="color-options">
+                        <button class="color-option active" data-theme="green"
+                            style="background-color: #4caf50;"></button>
+                        <button class="color-option" data-theme="blue" style="background-color: #2196F3;"></button>
+                        <button class="color-option" data-theme="purple" style="background-color: #9c27b0;"></button>
+                        <button class="color-option" data-theme="orange" style="background-color: #ff9800;"></button>
+                        <button class="color-option" data-theme="red" style="background-color: #f44336;"></button>
+                    </div>
+                </div>
+
+                <button id="apply-settings" class="btn primary-btn">Apply Settings</button>
+            </div>
+
+            <canvas id="game-canvas" width="400" height="400"></canvas>
+            <button class="logout-btn" id="logout-btn">Logout</button>
+        </div>
+    </div>
+
+    <!-- Game over overlay -->
+    <div class="overlay" id="game-over-overlay">
+        <div class="modal">
+            <h2>Game Over</h2>
+            <p>Your score: <span id="final-score">0</span></p>
+
+            <div class="scoreboard" id="scoreboard">
+                <!-- Scoreboard items will be added here -->
+            </div>
+
+            <div class="buttons">
+                <button class="btn primary-btn" id="restart-btn">Play Again</button>
+                <button class="btn secondary-btn" id="return-btn">Return to Menu</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="game.js"></script>
+    <script src="auth.js"></script>
+</body>
+
+</html>
